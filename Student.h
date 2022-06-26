@@ -6,6 +6,7 @@ private:
 	string name;
 	string surname;
 	string patronymic;
+protected:
 	int* mathematics = new int[0];
 	int* russian = new int[0];
 	int* physics = new int[0];
@@ -19,7 +20,7 @@ public:
 		this->surname = surname;
 		this->patronymic = patronymic;
 	}
-	Student(const Student& stud2) {
+	Student(Student& stud2) {
 		this->name = stud2.name;
 		this->surname = stud2.surname;
 		this->patronymic = stud2.patronymic;
@@ -39,7 +40,7 @@ public:
 			physics[i] = stud2.physics[i];
 		}
 	}
-	void operator= (const Student& stud2) {
+	/*void operator= (Student& stud2) {
 		this->name = stud2.name;
 		this->surname = stud2.surname;
 		this->patronymic = stud2.patronymic;
@@ -58,7 +59,7 @@ public:
 		for (int i = 0; i < size3; i++) {
 			physics[i] = stud2.physics[i];
 		}
-	}
+	}*/
 	~Student() {
 		delete[]mathematics;
 		delete[]russian;
@@ -68,6 +69,15 @@ public:
 		this->name = name;
 		this->surname = surname;
 		this->patronymic = patronymic;
+	}
+	int* getMathematics() {
+		return mathematics;
+	}
+	int* getRussian() {
+		return russian;
+	}
+	int* getPhysics() {
+		return physics;
 	}
 	void addMarkMath(int mark);
 	void addMarkRus(int mark);

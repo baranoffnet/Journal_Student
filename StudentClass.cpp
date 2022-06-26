@@ -1,44 +1,52 @@
-п»ї#include <iostream>
-#include <Windows.h>
-#include "Student.h"
-using namespace std;
-
+#include <iostream>
+#include <windows.h>
+#include "Journal.h"
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	Student st1("РџРµС‚СЂРѕРІ", "РџРµС‚СЂ", "РџРµС‚СЂРѕРІРёС‡");
-	Student st2("РЎРёРґРѕСЂРѕРІ", "РЎРёРґСЂ", "РЎРёРґРѕСЂРѕРІРёС‡");
-	Student st3("РќРёРєРѕР»Р°РµРІ", "РќРёРєРѕР»Р°Р№", "РќРёРєРѕР»Р°РµРІРёС‡");
-	st1.addMarkMath(4);
-	st1.addMarkMath(3);
-	st1.addMarkMath(5);
-	st1.addMarkRus(3);
-	st1.addMarkRus(1);
-	st1.addMarkRus(2);
-	st1.addMarkPhy(5);
-	st1.addMarkPhy(5);
-
-	st2.addMarkMath(4);
-	st2.addMarkMath(3);
-	st2.addMarkMath(5);
-	st2.addMarkRus(3);
-	st2.addMarkRus(1);
-	st2.addMarkRus(2);
-	st2.addMarkPhy(5);
-	st2.addMarkPhy(5);
-
-	st3.addMarkMath(4);
-	st3.addMarkMath(3);
-	st3.addMarkMath(5);
-	st3.addMarkRus(3);
-	st3.addMarkRus(1);
-	st3.addMarkRus(2);
-	st3.addMarkPhy(5);
-	st3.addMarkPhy(5);
-
-	st1.showInfo();
-	st2.showInfo();
-	st3.showInfo();
+	
+	Journal j1;
+	int a = 0;
+	int number = 0;
+NEW:
+	cout << "-------ЖУРНАЛ--------" << endl;
+	cout << "Что делаем?" << endl;
+	cout << "---Добавить студента: 1" << endl;
+	cout << "---Вывести оценки :   2" << endl;
+	cout << "---Удалить студента:  3" << endl;
+	cout << "---Вывести журнал:    4" << endl;
+	cout << "---Вывести журнал:    5" << endl;
+	cout << "---Выход:             0" << endl;
+	cin >> a;
+	switch (a)
+	{
+	case 1:
+		j1.addStudent();
+		goto NEW;
+		break;
+	case 2:
+		cout << "---Вывечти номер студента:" << endl;
+		cin >> number;
+		j1.addMark(number);
+		goto NEW;
+		break;
+	case 3:
+		cout << "---Вывечти номер студента:" << endl;
+		cin >> number;
+		j1.delStudent(number);
+		goto NEW;
+		break;
+	case 4:
+		j1.averageStudent();
+		goto NEW;
+		break;
+	case 5:
+		j1.infoJournal();
+		goto NEW;
+		break;
+	case 0:
+		break;
+	}
 }
 

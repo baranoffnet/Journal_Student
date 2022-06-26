@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include "Student.h"
+
 using namespace std;
 void Student::addMarkMath(int mark) {
 	int* buf = new int[size1 + 1];
