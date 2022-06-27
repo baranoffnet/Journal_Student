@@ -70,15 +70,7 @@ public:
 		this->surname = surname;
 		this->patronymic = patronymic;
 	}
-	int* getMathematics() {
-		return mathematics;
-	}
-	int* getRussian() {
-		return russian;
-	}
-	int* getPhysics() {
-		return physics;
-	}
+	
 	void addMarkMath(int mark);
 	void addMarkRus(int mark);
 	void addMarkPhy(int mark);

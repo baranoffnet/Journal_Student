@@ -19,6 +19,6 @@ public:
 	void addMark(int number);
 	void delStudent(int number);
 	void infoJournal();
-	void averageStudent();
+	void averageStudent(int a);
 };
 
